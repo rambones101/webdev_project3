@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map - Erick Ramirez</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+  <script>
+    function initMap() {
+      // Map options
+      var options = {
+        zoom: 10,
+        center: { lat: 41.8781, lng: -87.6298 }, // Chicago, IL
+        styles: [
+          {
+            "featureType": "water",
+            "elementType": "geometry",
+            "stylers": [{ "color": "#e9e9e9" }, { "lightness": 17 }]
+          },
+          {
+            "featureType": "landscape",
+            "elementType": "geometry",
+            "stylers": [{ "color": "#f5f5f5" }, { "lightness": 20 }]
+          },
+          {
+            "featureType": "road.highway",
+            "elementType": "geometry.fill",
+            "stylers": [{ "color": "#ffffff" }, { "lightness": 17 }]
+          }
+        ]
+      };
+
+      // New map
+      var map = new google.maps.Map(document.getElementById('map'), options);
+
+      // Add marker
+      var marker = new google.maps.Marker({
+        position: { lat: 41.8781, lng: -87.6298 },
+        map: map,
+        title: 'Chicago, IL'
+      });
+
+      // Add info window
+      var infoWindow = new google.maps.InfoWindow({
+        content: '<h3>Chicago, IL</h3><p>The Windy City</p>'
+      });
+
+      marker.addListener('click', function() {
+        infoWindow.open(map, marker);
+      });
+    }
+  </script>
+</head>
+<body class="map">
+  <nav>
+    <ul>
+      <li><a href="index.html">Resume</a></li>
+      <li><a href="page1.html">My Hobbies</a></li>
+      <li><a href="page2.html">Places I've Traveled Too</a></li>
+      <li><a href="map.html">Map</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>My Map</h1>
+    <div id="map" style="height: 500px; width: 100%;"></div>
+  </div>
+  <footer>
+    <p>&copy; 2024 Erick Ramirez</p>
+  </footer>
+</body>
+</html>
