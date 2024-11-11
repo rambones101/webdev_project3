@@ -23,7 +23,6 @@ function initMap() {
 
   var map = new google.maps.Map(document.getElementById("map"), options);
 
-
   var marker = new google.maps.Marker({
     position: { lat: 41.8781, lng: -87.6298 },
     map: map,
@@ -38,3 +37,28 @@ function initMap() {
     infoWindow.open(map, marker);
   });
 }
+
+// Slider functionality
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.style.display = i === index ? 'block' : 'none';
+  });
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+
+// Initialize the slider
+document.addEventListener('DOMContentLoaded', () => {
+  showSlide(currentSlide);
+});
