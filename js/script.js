@@ -1,8 +1,7 @@
 function initMap() {
-  // Map options
   var options = {
     zoom: 10,
-    center: { lat: 41.8781, lng: -87.6298 }, // Chicago, IL
+    center: { lat: 41.8781, lng: -87.6298 },
     styles: [
       {
         featureType: "water",
@@ -22,17 +21,15 @@ function initMap() {
     ],
   };
 
-  // New map
   var map = new google.maps.Map(document.getElementById("map"), options);
 
-  // Add marker
+
   var marker = new google.maps.Marker({
     position: { lat: 41.8781, lng: -87.6298 },
     map: map,
     title: "Chicago, IL",
   });
 
-  // Add info window
   var infoWindow = new google.maps.InfoWindow({
     content: "<h3>Chicago, IL</h3><p>The Windy City</p>",
   });
