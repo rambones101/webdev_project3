@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Map - Erick Ramirez</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCs7B5KRlid-hgPo2DfuvYGzHTXQSVvTaw&callback=initMap" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCs7B5KRlid-hgPo2DfuvYGzHTXQSVvTaw&callback=initMap"
+    async defer></script>
   <script>
     function initMap() {
       // Map options
@@ -47,12 +49,13 @@
         content: '<h3>Chicago, IL</h3><p>The Windy City</p>'
       });
 
-      marker.addListener('click', function() {
+      marker.addListener('click', function () {
         infoWindow.open(map, marker);
       });
     }
   </script>
 </head>
+
 <body class="map">
   <nav>
     <ul>
@@ -70,4 +73,5 @@
     <p>&copy; 2024 Erick Ramirez</p>
   </footer>
 </body>
+
 </html>
