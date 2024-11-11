@@ -38,7 +38,6 @@ function initMap() {
   });
 }
 
-// Slider functionality
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 
@@ -58,7 +57,7 @@ function prevSlide() {
   showSlide(currentSlide);
 }
 
-// Initialize the slider
+
 document.addEventListener('DOMContentLoaded', () => {
   showSlide(currentSlide);
 });
